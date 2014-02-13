@@ -1,5 +1,6 @@
 var canvas;
 var ctx;
+var index= 20;
 window.onload = function(){
 	canvas = document.getElementById("canvas");
 	canvas.width = 1000;
@@ -19,8 +20,8 @@ window.requestAnimFrame = (function(){
 
 (function animloop(){
   requestAnimFrame(animloop);
-  render();
+  ctx.rect(index,20,150,100);
+  ctx.stroke();
+  index++;
 })();
 
-ctx.rect(index,20,150,100);
-ctx.stroke();
