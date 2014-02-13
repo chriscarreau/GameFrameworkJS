@@ -7,7 +7,7 @@ GameFrameworkJS is a JavaScript file. The file is intended for personal use and 
 ### System
 
 GameFrameworkJS is tested on the following versions of Internet Browsers:
-Chrome 32.0.1700.107
+* Chrome 32.0.1700.107
 
 ### Installation
 
@@ -16,4 +16,9 @@ Chrome 32.0.1700.107
 3. Get the JS file and put it your Javascript folder of your HTML page.
 4. Start coding!
 
+# Test
+
+'''AAAAA
+AAAAA
+AAAAA
 ©GameFrameworkJS
