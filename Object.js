@@ -1,0 +1,10 @@
+var height = 600, //si non spécifé, prendre celle de l'image/sprite
+	width = 1000,
+	accelX = 0,
+	accelY = 0,
+	posX = 0,
+	posY = 0;
+	dir = 'Left';
+	sprite = 'Sprite';
+	gravity = 0;
+	isAffectedByGravity = true;

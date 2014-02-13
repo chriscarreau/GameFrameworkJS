@@ -38,18 +38,9 @@ function animloop(){
 //----------------------------------------------------
 // GLOBAL VARIABLES
 //----------------------------------------------------
-var objArray = new arrray() //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
+var objArray = new arrray(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
 	canvas = document.getElementById('canvas'),
-	height = 600; //si non spécifé, prendre celle de l'image/sprite
-	width = 1000,
-	ctx = canvas.getContext('2d'),
-	accelX = 0,
-	accelY = 0,
-	posX = 0,
-	posY = 0;
-	dir = 'Left';
-	sprite = 'Sprite';
-	isAffectedByGravity = true;
+	ctx = canvas.getContext('2d');
 	
 
 //----------------------------------------------------
