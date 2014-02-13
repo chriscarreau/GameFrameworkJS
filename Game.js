@@ -6,3 +6,21 @@ window.onload = function(){
 	canvas.height = 600;
 	ctx = canvas.getContext("2d");
 }
+
+var index = 20;
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+(function animloop(){
+  requestAnimFrame(animloop);
+  render();
+})();
+
+ctx.rect(index,20,150,100);
+ctx.stroke();
