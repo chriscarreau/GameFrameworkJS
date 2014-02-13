@@ -9,19 +9,19 @@ window.onload = function(){
 }
 
 var index = 20;
-window.requestAnimFrame = (function(){
+window.requestAnimFrame = function(){
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||
           window.mozRequestAnimationFrame    ||
           function( callback ){
             window.setTimeout(callback, 1000 / 60);
           };
-})();
+};
 
-(function animloop(){
+function animloop(){
   requestAnimFrame(animloop);
   ctx.rect(index,20,150,100);
   ctx.stroke();
   index++;
-})();
+};
 
