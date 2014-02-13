@@ -13,5 +13,7 @@ Chrome 32.0.1700.107
 
 1. Download the files via 'Download ZIP'
 2. Extract it somewhere
+3. Get the JS file and put it your Javascript folder of your HTML page.
+4. Start coding!
 
 ©GameFrameworkJS
