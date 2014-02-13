@@ -1,13 +1,21 @@
 var TiledMap = function(options)
 {
+	//Variables
 	var Map = {},
-		mapUrl = options.src,
-		Map.Name = options.name,
-		Map.JsonObject = loadMap(),
-		Map.Height = JsonObject.height,
-		Map.Width = JsonObject.width,
-		Map.TileWidth = JsonObject.tilewidth,
-		Map.TileHeight = JsonObject.tileheight;
+		Map.mapUrl = options.src,						//url of the map on the server 
+		Map.Name = options.name, 						//name you want to give to the map
+		Map.JsonObject = loadMap(),						//Json object containing all the information of the map
+		Map.Height = JsonObject.height,					//Height of the map
+		Map.Width = JsonObject.width,					//Width of the map
+		Map.TileWidth = JsonObject.tilewidth,			//width of a tile
+		Map.TileHeight = JsonObject.tileheight,			//height of a tile
+		Map.Layers = JsonObject.layers,					//collection of all the layers
+		Map.TileSets = JsonObject.tilesets,				//collection of tilesets
+		Map.IsScrolling = options.isScrolling || false,	//Tell if the background should scroll
+		Map.ScrollSpeed = options.scrollSpeed,			//Map scrollSpeed
+		Map.ScrollDirection = options.scrollDirection;	//Map scrollDirection ('Left','Up','Right','Down')
+		
+	//Functions
 	
 	var 
 	function loadMap() {
@@ -26,6 +34,10 @@ var TiledMap = function(options)
 		xmlhttp.open("GET", mapUrl, true);
 		xmlhttp.send();
 	}
-	
+	return Map;
+}
+
+var tileSet = function()
+{
 	
 }

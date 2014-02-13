@@ -39,8 +39,9 @@ function animloop(){
 // GLOBAL VARIABLES
 //----------------------------------------------------
 var objArray = new arrray(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
-	canvas = document.getElementById('canvas'),
-	ctx = canvas.getContext('2d');
+	CANVAS = document.getElementById('canvas'),
+	CTX = canvas.getContext('2d'),
+	GRAVITY = 0.98;
 	
 
 //----------------------------------------------------
@@ -58,16 +59,16 @@ window.requestAnimationFrame  = function(){
 //----------------------------------------------------
 // GAME LOOP
 //----------------------------------------------------
-function gameLoop(ctx){
+function gameLoop(){
 	gameUpdate();
-	gameRender(ctx);
-	requestAnimationFrame(ctx);
+	gameRender();
+	requestAnimationFrame(gameLoop);
 }
 
 //----------------------------------------------------
 // GAME RENDER
 //----------------------------------------------------
-function gameRender(ctx){
+function gameRender(){
 	ctx.clear();
 	//Code pour render les objets
 }
