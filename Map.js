@@ -12,12 +12,38 @@ var TiledMap = function(options)
 		Map.Layers = JsonObject.layers,					//collection of all the layers
 		Map.TileSets = JsonObject.tilesets,				//collection of tilesets
 		Map.IsScrolling = options.isScrolling || false,	//Tell if the background should scroll
+		Map.PositionX = options.positionX || 0,
+		Map.PositionY = options.positionY || 0,
 		Map.ScrollSpeed = options.scrollSpeed,			//Map scrollSpeed
-		Map.ScrollDirection = options.scrollDirection;	//Map scrollDirection ('Left','Up','Right','Down')
+		Map.ScrollDirection = options.scrollDirection;	//Map scrollDirection ('Horizontal','Vertical')
 		
 	//Functions
+	Map.Update = function()
+	{
+		if (Map.IsScrolling)
+		{
+			if(Map.ScrollDirection = 'Horizontal')
+			{
+				Map.PositionX += Map.ScrollSpeed
+			}
+			else
+			{
+				Map.PositionY += Map.ScrollSpeed
+			}
+		}
+	}
 	
-	var 
+	Map.Render = function()
+	{
+		Map.layers.forEach(function(layer){
+			for(var row = 0; row < layer.width; row++){
+				for(var col = 0; col < layer.height; col++){
+					
+				}
+			}
+		});
+	}
+
 	function loadMap() {
 		var xmlhttp;
 
@@ -28,16 +54,11 @@ var TiledMap = function(options)
 				return JSON.parse(xmlhttp.responseText);
 			}
 		  else{
-				alert("The map couldn't be load correctly");
+				alert("The map couldn't be loaded correctly");
 		  }
 		}
 		xmlhttp.open("GET", mapUrl, true);
 		xmlhttp.send();
 	}
 	return Map;
-}
-
-var tileSet = function()
-{
-	
 }
