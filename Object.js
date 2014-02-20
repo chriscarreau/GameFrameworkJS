@@ -11,7 +11,7 @@ var GameObject = function(options)
 		gameObj.PositionX = options.posX,
 		gameObj.PositionY = options.posY,
 		gameObj.Direction = options.direction,
-		gameObj.Sprite = options.sprite,
+		gameObj.Sprite = options.sprite, //Image du joueur
 		gameObj.Gravity = options.gravity,
 		gameObj.IsAffectedByGravity = options.isAffectedByGravity || false;
 	
@@ -26,7 +26,8 @@ var GameObject = function(options)
 	//----------------------------------------------------
 	// UPDATE
 	//----------------------------------------------------
-	function update(){
+	function update()
+	{
 		//Code pour updater les objets;
 		gameObj.Height =
 		gameObj.Width = options.width || 0,
@@ -43,15 +44,17 @@ var GameObject = function(options)
 	//----------------------------------------------------
 	// CHECK COLLISION
 	//----------------------------------------------------
-	function checkCollision(){
+	function checkCollision()
+	{
 		//Code pour vérifier la collision
 	}
 
 	//----------------------------------------------------
 	// ON COLLISION
 	//----------------------------------------------------
-	function onCollision(){
+	function onCollision()
+	{
 		//To be defined by the coder
 	}
-	return gObject;
+	return gameObj;
 }
