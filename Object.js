@@ -3,17 +3,17 @@ var GameObject = function(options)
 	//----------------------------------------------------
 	// GLOBAL VARIABLES
 	//----------------------------------------------------
-	var height = 600, //si non spécifé, prendre celle de l'image/sprite
-		width = 1000,
-		accelX = 0,
-		accelY = 0,
-		posX = 0,
-		posY = 0;
-		dir = 'Left';
-		sprite = 'Sprite';
-		gravity = 0;
-		isAffectedByGravity = true;
-		
+	var Object.Height = 0, //si non spécifé, prendre celle de l'image/sprite
+		Object.Width = 0,
+		Object.AccelerationX = 0,
+		Object.AccelerationY = 0,
+		Object.PositionX = 0,
+		Object.PositionY = 0,
+		Object.Direction = 'Left',
+		Object.Sprite = 'Sprite',
+		Object.Gravity = 0,
+		Object.IsAffectedByGravity = true;
+	
 	//----------------------------------------------------
 	// RENDER
 	//----------------------------------------------------

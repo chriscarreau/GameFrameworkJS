@@ -4,6 +4,9 @@
 
 var CANVAS;
 var CTX;
+/*
+var canvas;
+var ctx;
 var index= 20;
 window.onload = function(){
     CANVAS = document.getElementById('canvas');
@@ -32,7 +35,7 @@ function animloop(){
   ctx.stroke();
   index++;
 };
-
+*/
 
 
 //----------------------------------------------------
@@ -42,9 +45,20 @@ function animloop(){
 //----------------------------------------------------
 // GLOBAL VARIABLES
 //----------------------------------------------------
-var objArray = new Array(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
+
+var objArray = new arrray(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
+	CANVAS = document.getElementById('canvas'),
+	CTX = canvas.getContext('2d'),
+	CTXHEIGHT = canvas.height,
+	CTXWIDTH = canvas.width,
 	GRAVITY = 0.98;
 
+//----------------------------------------------------
+// INITIALIZE
+//----------------------------------------------------
+function initCanvas(){
+
+}
 
 //----------------------------------------------------
 // REQUEST ANIMATION FRAME
@@ -81,3 +95,10 @@ function gameRender(){
 function gameUpdate(){
 	//Code pour updater les objets;
 }
+
+//----------------------------------------------------
+// EVENTS LISTENERS
+//----------------------------------------------------
+window.addEventListener('load', function(event) {
+	initCanvas();
+});
