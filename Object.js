@@ -10,9 +10,9 @@ var GameObject = function(options)
 		gameObj.AccelerationY = options.accelY,
 		gameObj.PositionX = options.posX,
 		gameObj.PositionY = options.posY,
-		gameObj.Direction = options.direction,
+		gameObj.Direction = {LEFT:false, RIGHT:false, UP:false, DOWN:false},
 		gameObj.Sprite = options.sprite, //Image du joueur
-		gameObj.Gravity = options.gravity,
+		gameObj.Gravity = options.gravity || 0,
 		gameObj.IsAffectedByGravity = options.isAffectedByGravity || false;
 	
 	//----------------------------------------------------
@@ -21,6 +21,10 @@ var GameObject = function(options)
 	function render()
 	{
 		//Code pour render les objets
+		Map.Render();
+		ctx.save();
+		ctx.translate(); //http://jlongster.com/Making-Sprite-based-Games-with-Canvas
+		ctx.restore;
 	}
 
 	//----------------------------------------------------
@@ -29,18 +33,19 @@ var GameObject = function(options)
 	function update()
 	{
 		//Code pour updater les objets;
-		gameObj.Height =
-		gameObj.Width = options.width || 0,
-		gameObj.AccelerationX = options.accelX,
-		gameObj.AccelerationY = options.accelY,
-		gameObj.PositionX = options.posX,
-		gameObj.PositionY = options.posY,
-		gameObj.Direction = options.direction,
-		gameObj.Sprite = options.sprite,
-		gameObj.Gravity = options.gravity,
-		gameObj.IsAffectedByGravity = options.isAffectedByGravity || false;		
+		
 	}
-
+	
+	function updateMovement()
+	{
+		//Code pour updater le mouvement des objets;
+		 gameObj.PositionX += gameObj.AccelX;
+		 if (gameObj.isAffectedByGravity)
+		 {
+			gameObj.AccelY += GRAVITY;
+		 }
+		 gameObj.PositionY += gameObj.AccelY;
+	}
 	//----------------------------------------------------
 	// CHECK COLLISION
 	//----------------------------------------------------
