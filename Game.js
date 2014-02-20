@@ -52,17 +52,24 @@ var objArray = new Array(), //http://stackoverflow.com/questions/5242050/how-to-
 //----------------------------------------------------
 // INITIALIZE
 //----------------------------------------------------
+<<<<<<< HEAD
 function initCanvas(){
 	CANVAS = document.getElementById('canvas'),
 	CANVAS.width = 1000,
 	CANVAS.height = 600,
 	CTX = CANVAS.getContext('2d');
+=======
+function initCanvas()
+{
+
+>>>>>>> 53359bcb05e083256a519adb6625ec0a83842e0e
 }
 
 //----------------------------------------------------
 // REQUEST ANIMATION FRAME
 //----------------------------------------------------
-window.requestAnimationFrame  = function(){
+window.requestAnimationFrame  = function()
+{
   return  window.requestAnimationFrame       ||
           window.webkitRequestAnimationFrame ||
           window.mozRequestAnimationFrame    ||
@@ -74,7 +81,8 @@ window.requestAnimationFrame  = function(){
 //----------------------------------------------------
 // GAME LOOP
 //----------------------------------------------------
-function gameLoop(){
+function gameLoop()
+{
 	gameUpdate();
 	gameRender();
 	requestAnimationFrame(gameLoop);
@@ -83,16 +91,26 @@ function gameLoop(){
 //----------------------------------------------------
 // GAME RENDER
 //----------------------------------------------------
-function gameRender(){
+function gameRender()
+{
 	ctx.clear();
 	//Code pour render les objets
+	objArray.forEach(function(obj) 
+	{
+		obj.render();
+	}
 }
 
 //----------------------------------------------------
 // GAME UPDATE
 //----------------------------------------------------
-function gameUpdate(){
+function gameUpdate()
+{
 	//Code pour updater les objets;
+	objArray.forEach(function(obj) 
+	{
+		obj.update();
+	}
 }
 
 //----------------------------------------------------
