@@ -46,7 +46,7 @@ function animloop(){
 // GLOBAL VARIABLES
 //----------------------------------------------------
 
-var objArray = new arrray(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
+var objArray = new Array(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
 	CANVAS = document.getElementById('canvas'),
 	CTX = canvas.getContext('2d'),
 	CTXHEIGHT = canvas.height,
