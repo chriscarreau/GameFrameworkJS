@@ -11,6 +11,14 @@ var TiledMap = function(options)
 		Map.ScrollSpeed = options.scrollSpeed,			//Map scrollSpeed
 		Map.ScrollDirection = options.scrollDirection;	//Map scrollDirection ('Horizontal','Vertical')
 		
+	Map.Init = function()
+	{
+	    loadMap();
+	    Map.TileSets.forEach(function(tileset){
+	        var img = new Image();
+	        img.src = tileset.image;
+	    });
+	};
 	//Functions
 	Map.Update = function()
 	{
@@ -39,7 +47,7 @@ var TiledMap = function(options)
                         var nbTilePerLine = tileset.imagewidth / Map.TileWidth;
                         var image = new Image();
                         image.src = tileset.image;
-                        image.onload = function(){
+                        //image.onload = function(){
                     					CTX.drawImage(  image,                              //Tileset(image) to use
                                         ((tile / nbTilePerLine) | 0) * Map.TileWidth, //X coord where to start clipping
                                         ((tile % nbTilePerLine) | 0) * Map.TileHeight,//Y coord where to start clipping
@@ -49,7 +57,7 @@ var TiledMap = function(options)
                                         Map.PositionY + row * Map.TileHeight,                       //Y position on canvas where to draw
                                         Map.TileWidth,                              //width of the canvas to draw on
                                         Map.TileHeight);                            //height of the canvas to draw on
-                        }
+                       // }
                     }
 				}
 			}
@@ -91,7 +99,3 @@ var TiledMap = function(options)
     }
 	return Map;
 };
-
-
-
-

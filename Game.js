@@ -46,18 +46,17 @@ function animloop(){
 // GLOBAL VARIABLES
 //----------------------------------------------------
 
-var objArray = new arrray(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
-	CANVAS = document.getElementById('canvas'),
-	CTX = canvas.getContext('2d'),
-	CTXHEIGHT = canvas.height,
-	CTXWIDTH = canvas.width,
+var objArray = new Array(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
 	GRAVITY = 0.98;
 
 //----------------------------------------------------
 // INITIALIZE
 //----------------------------------------------------
 function initCanvas(){
-
+	CANVAS = document.getElementById('canvas'),
+	CANVAS.width = 1000,
+	CANVAS.height = 600,
+	CTX = CANVAS.getContext('2d');
 }
 
 //----------------------------------------------------
