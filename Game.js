@@ -92,7 +92,7 @@ function gameRender()
 	objArray.forEach(function(obj) 
 	{
 		obj.render();
-	}
+	});
 }
 
 //----------------------------------------------------
@@ -104,7 +104,7 @@ function gameUpdate()
 	objArray.forEach(function(obj) 
 	{
 		obj.update();
-	}
+	});
 }
 
 //----------------------------------------------------
