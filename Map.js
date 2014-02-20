@@ -1,9 +1,9 @@
 var TiledMap = function(options)
 {
 	//Variables
-	var Map = {},
+	var Map = {};   
 		Map.mapUrl = options.src,						//url of the map on the server 
-		Map.Name = options.name, 						//name you want to give to the map
+		Map.Name = options.name,						//name you want to give to the map
 		Map.JsonObject = loadMap(),						//Json object containing all the information of the map
 		Map.Height = Map.JsonObject.height,					//Height of the map
 		Map.Width = Map.JsonObject.width,					//Width of the map
@@ -24,14 +24,14 @@ var TiledMap = function(options)
 		{
 			if(Map.ScrollDirection == 'Horizontal')
 			{
-				Map.PositionX += Map.ScrollSpeed
+				Map.PositionX += Map.ScrollSpeed;
 			}
 			else
 			{
-				Map.PositionY += Map.ScrollSpeed
+				Map.PositionY += Map.ScrollSpeed;
 			}
 		}
-	}
+	};
 	
 	Map.Render = function()
 	{
@@ -42,7 +42,7 @@ var TiledMap = function(options)
 				}
 			}
 		});
-	}
+	};
 
 	function loadMap() {
 		var xmlhttp;
@@ -50,15 +50,15 @@ var TiledMap = function(options)
 		// code for IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange=function(){
-		  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
 				return JSON.parse(xmlhttp.responseText);
 			}
-		  else{
+            else{
 				alert("The map couldn't be loaded correctly");
-		  }
-		}
-		xmlhttp.open("GET", mapUrl, true);
+            }
+		};
+		xmlhttp.open("GET", Map.mapUrl, true);
 		xmlhttp.send();
 	}
 	return Map;
-}
+};
