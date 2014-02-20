@@ -14,7 +14,7 @@ window.onload = function(){
     setTimeout(function() {
         map.Render();
     }, 5000);
-}
+};
 
 var index = 20;
 window.requestAnimFrame = function(){
@@ -44,7 +44,7 @@ function animloop(){
 //----------------------------------------------------
 var objArray = new Array(), //http://stackoverflow.com/questions/5242050/how-to-access-js-array-defined-in-another-js-file
 	GRAVITY = 0.98;
-	
+
 
 //----------------------------------------------------
 // REQUEST ANIMATION FRAME

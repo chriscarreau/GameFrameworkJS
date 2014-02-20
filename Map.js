@@ -39,7 +39,8 @@ var TiledMap = function(options)
                         var nbTilePerLine = tileset.imagewidth / Map.TileWidth;
                         var image = new Image();
                         image.src = tileset.image;
-    					CTX.drawImage(  image,                              //Tileset(image) to use
+                        image.onload = function(){
+                    					CTX.drawImage(  image,                              //Tileset(image) to use
                                         ((tile / nbTilePerLine) | 0) * Map.TileWidth, //X coord where to start clipping
                                         ((tile % nbTilePerLine) | 0) * Map.TileHeight,//Y coord where to start clipping
                                         Map.TileWidth,                              //Width of the image to clip
@@ -48,6 +49,7 @@ var TiledMap = function(options)
                                         Map.PositionY + row * Map.TileHeight,                       //Y position on canvas where to draw
                                         Map.TileWidth,                              //width of the canvas to draw on
                                         Map.TileHeight);                            //height of the canvas to draw on
+                        }
                     }
 				}
 			}
@@ -70,10 +72,10 @@ var TiledMap = function(options)
         		Map.TileSets = Map.JsonObject.tilesets;		//collection of tilesets
 			}
             else{
-				alert("The map couldn't be loaded correctly\n" + xmlhttp.readyState + " et " + xmlhttp.status==200);
+				//alert("The map couldn't be loaded correctly\n" + xmlhttp.readyState + " et " + xmlhttp.status);
             }
 		};
-		xmlhttp.open("GET", Map.mapUrl, true);
+		xmlhttp.open("GET", Map.mapUrl, false);
 		xmlhttp.send();
 	}
 	
